@@ -1,11 +1,12 @@
+
 import ApiLensApp from '@/components/ApiLense';
 import { Toaster } from 'sonner';
-import LandingPage from './ui-components/LandingPage';
 
-export default function Home() {
+export default function AppPage() {
   return (
     <>
-     <LandingPage/>
+      <Toaster position="top-right" />
+      <ApiLensApp/>
     </>
   );
 }

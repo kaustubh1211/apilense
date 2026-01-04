@@ -2,9 +2,9 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   try {
-    const { url } = await request.json();
+    const { url, method = 'GET', headers = {} } = await request.json();
 
-    // Basic validation
+    // Validation
     if (!url || typeof url !== 'string') {
       return NextResponse.json(
         { error: 'Invalid URL' },
@@ -21,13 +21,17 @@ export async function POST(request: Request) {
       );
     }
 
-    // Fetch from external API
-    const response = await fetch(url, {
+    // Build fetch options
+    const fetchOptions: RequestInit = {
+      method,
       headers: {
         'User-Agent': 'ApiLens/1.0',
+        ...headers, // User's custom headers
       },
-    });
+    };
 
+    // Fetch from external API
+    const response = await fetch(url, fetchOptions);
     const data = await response.json();
     const size = JSON.stringify(data).length;
 
@@ -38,6 +42,7 @@ export async function POST(request: Request) {
     });
 
   } catch (error) {
+    console.error('Fetch error:', error);
     return NextResponse.json(
       { error: 'Failed to fetch data' },
       { status: 500 }
