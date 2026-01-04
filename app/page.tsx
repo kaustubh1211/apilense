@@ -1,11 +1,19 @@
-import ApiLensApp from '@/components/ApiLense';
-import { Toaster } from 'sonner';
-import LandingPage from './ui-components/LandingPage';
+
+import Hero from './ui-components/Hero';
+import Navbar from './ui-components/NavbarPage';
+import Features from './ui-components/Feature';
+import HowItWorks from './ui-components/HowWork';
+import CTAAndFooter from './ui-components/CTAFotter';
 
 export default function Home() {
   return (
     <>
-     <LandingPage/>
+    <Navbar/>
+     <Hero/>
+     <Features/>
+     <HowItWorks/>
+     <CTAAndFooter/>
+
     </>
   );
 }

@@ -41,7 +41,7 @@ export default function StatsPanel({ data, status, time, size }: StatsPanelProps
       {stats.map((stat) => (
         <div
           key={stat.label}
-          className="bg-gray-950 border border-gray-900 rounded-lg p-4"
+          className="border-b border-neutral-800 bg-neutral-950 text-neutral-200   rounded-b-sm p-4"
         >
           <div className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">
             {stat.label}
