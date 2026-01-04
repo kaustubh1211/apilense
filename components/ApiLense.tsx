@@ -20,10 +20,12 @@ export default function ApiLensApp() {
   const [activeTab, setActiveTab] = useState<'tree' | 'table' | 'raw' | 'graph'>('tree');
   const [searchQuery, setSearchQuery] = useState('');
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [responseKey, setResponseKey] = useState(0); // Add this for forcing re-render
 
   const handleResponse = (response: any) => {
     setResponseData(response);
     setSearchQuery('');
+    setResponseKey(prev => prev + 1); // Increment to force graph re-render
     toast.success('Response received');
   };
 
@@ -37,9 +39,9 @@ export default function ApiLensApp() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Top Bar */}
-      <div className="border-b border-gray-900">
+      <div className="border-b border-neutral-900">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/landing" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+          <Link href="/" className="flex items-center gap-2 text-neutral-400 hover:text-white transition-colors">
             <ArrowLeft className="w-4 h-4" />
             <span className="text-sm">Back</span>
           </Link>
@@ -56,7 +58,7 @@ export default function ApiLensApp() {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-6 py-8 space-y-6">
         {/* Request Form */}
-        <div className="bg-gray-950 border border-gray-900 rounded-lg p-6">
+        <div className="bg-neutral-950 border border-neutral-900 rounded-lg p-6">
           <ApiForm onResponse={handleResponse} onError={handleError} />
         </div>
 
@@ -74,11 +76,11 @@ export default function ApiLensApp() {
             )}
 
             {/* Viewer */}
-            <div className={`bg-gray-950 border border-gray-900 rounded-lg overflow-hidden ${
+            <div className={`bg-neutral-950 border border-neutral-900 rounded-lg overflow-hidden ${
               isFullscreen ? 'fixed inset-0 z-50 rounded-none' : ''
             }`}>
               {/* Toolbar */}
-              <div className="border-b border-gray-900 p-4 flex items-center justify-between gap-4">
+              <div className="border-b border-neutral-900 p-4 flex items-center justify-between gap-4">
                 <div className="flex-1">
                   {activeTab === 'tree' && !isFullscreen && (
                     <SearchBar value={searchQuery} onChange={setSearchQuery} />
@@ -93,9 +95,9 @@ export default function ApiLensApp() {
                 {isFullscreen && (
                   <button
                     onClick={() => setIsFullscreen(false)}
-                    className="p-2 hover:bg-gray-900 rounded-lg transition-colors"
+                    className="p-2 hover:bg-neutral-900 rounded-lg transition-colors"
                   >
-                    <X className="w-5 h-5 text-gray-400" />
+                    <X className="w-5 h-5 text-neutral-400" />
                   </button>
                 )}
               </div>
@@ -118,7 +120,7 @@ export default function ApiLensApp() {
                   <div className={`p-6 overflow-auto custom-scrollbar ${
                     isFullscreen ? 'h-full' : 'max-h-[70vh]'
                   }`}>
-                    <TreeView data={responseData.data} searchQuery={searchQuery} />
+                    <TreeView key={responseKey} data={responseData.data} searchQuery={searchQuery} />
                   </div>
                 )}
 
@@ -126,19 +128,19 @@ export default function ApiLensApp() {
                   <div className={`overflow-auto custom-scrollbar ${
                     isFullscreen ? 'h-full' : 'max-h-[70vh]'
                   }`}>
-                    <TableView data={responseData.data} />
+                    <TableView key={responseKey} data={responseData.data} />
                   </div>
                 )}
 
                 {activeTab === 'graph' && (
                   <div className={isFullscreen ? 'h-full' : 'h-[70vh]'}>
-                    <GraphView data={responseData.data} />
+                    <GraphView key={responseKey} data={responseData.data} />
                   </div>
                 )}
 
                 {activeTab === 'raw' && (
                   <div className={isFullscreen ? 'h-full' : ''}>
-                    <RawView data={responseData.data} />
+                    <RawView key={responseKey} data={responseData.data} />
                   </div>
                 )}
               </div>
