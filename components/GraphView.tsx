@@ -50,16 +50,8 @@ function GraphViewInner({ data }: GraphViewProps) {
         className="bg-white"
       >
         <Background color="#e5e7eb" gap={16} size={1} />
-        <Controls 
-          className="!bg-white !border-2 !border-gray-300 !rounded-lg !shadow-lg overflow-hidden"
-          style={{
-            button: {
-              backgroundColor: 'white',
-              borderBottom: '1px solid #e5e7eb',
-              color: '#374151',
-            }
-          }}
-        />
+      <Controls className="bg-white border-2 border-gray-300 rounded-lg shadow-lg [&>button]:bg-white [&>button]:text-gray-700 [&>button]:border-b [&>button]:border-gray-300" />
+
         <MiniMap
           nodeColor="#f3f4f6"
           maskColor="rgba(255, 255, 255, 0.8)"
