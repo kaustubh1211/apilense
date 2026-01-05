@@ -49,7 +49,7 @@ export default function HowItWorks() {
         <div className="text-center mt-16">
           <a
             href="/app"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white font-semibold rounded-lg hover:bg-slate-800"
+            className="inline-flex items-center gap-2 px-8 py-4  bg-gradient-to-b from-blue-500 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-blue-800"
           >
             Try it now — it's free
             <ArrowRight className="w-5 h-5" />

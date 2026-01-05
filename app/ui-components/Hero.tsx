@@ -5,7 +5,10 @@ import { ArrowRight } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-slate-50">
+    <section className="relative overflow-hidden bg-white">
+      {/* Grid Pattern Background with Gradient Highlight */}
+    
+
       <div className="max-w-7xl mx-auto px-6 pt-20 pb-24 lg:pt-32 lg:pb-32">
         <div className="max-w-5xl mx-auto text-center">
           
@@ -22,22 +25,15 @@ export default function Hero() {
             Test APIs and convert JSON into interactive tree views, graphs, and tables — all in your browser.
           </p>
           
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
+          {/* CTA Button */}
+          <div className="flex items-center justify-center mb-20">
             <Link
               href="/app"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white font-semibold rounded-lg hover:bg-slate-800"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-b from-blue-500 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-blue-800 shadow-lg"
             >
               Start Testing APIs
               <ArrowRight className="w-5 h-5" />
             </Link>
-            
-            {/* <a
-              href="#demo"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-700 font-semibold rounded-lg border border-slate-200 hover:bg-slate-50"
-            >
-              Watch Demo
-            </a> */}
           </div>
 
           {/* App Preview - Placeholder for your image */}
@@ -51,7 +47,6 @@ export default function Hero() {
             </div>
           </div>
 
-   
         </div>
       </div>
     </section>

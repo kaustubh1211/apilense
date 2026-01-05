@@ -7,22 +7,20 @@ export default function CTAAndFooter() {
   return (
     <>
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,transparent,rgba(255,255,255,0.2))]" />
+      <section className="py-24 bg-slate-900 relative overflow-hidden">
         
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Ready to visualize your APIs?
           </h2>
-          <p className="text-xl text-indigo-100 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
             Join developers who are already using ApiLens to debug and understand their APIs faster.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/app"
-              className="group inline-flex items-center gap-2 px-10 py-4 bg-white text-slate-900 font-bold text-lg rounded-xl hover:bg-slate-100 hover:scale-105 shadow-2xl transition-all duration-200"
+              className="group inline-flex items-center gap-2 px-10 py-4 bg-indigo-600 text-white font-bold text-lg rounded-lg hover:bg-indigo-700 shadow-xl transition-all duration-200"
             >
               Get Started Free
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -32,14 +30,14 @@ export default function CTAAndFooter() {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-10 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold text-lg rounded-xl border-2 border-white/20 hover:bg-white/20 transition-all duration-200"
+              className="inline-flex items-center gap-2 px-10 py-4 bg-slate-800 text-white font-semibold text-lg rounded-lg border border-slate-700 hover:bg-slate-700 transition-all duration-200"
             >
               <Github className="w-5 h-5" />
               View on GitHub
             </a>
           </div>
 
-          <p className="mt-8 text-indigo-200 text-sm">
+          <p className="mt-8 text-slate-400 text-sm">
             No account required • Free forever • Open source
           </p>
         </div>

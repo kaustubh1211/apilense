@@ -51,12 +51,12 @@ export default function Navbar() {
             >
               <Github className="w-5 h-5" />
             </a>
-           
+         
             <Link 
               href="/app"
-              className="px-5 py-2 bg-slate-900 text-white text-sm font-semibold rounded-lg hover:bg-slate-800"
+              className="px-5 py-2  bg-gradient-to-b from-blue-500 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-blue-800 bg-indigo-"
             >
-                Launch App
+           Lanuch App
             </Link>
           </div>
         </div>
