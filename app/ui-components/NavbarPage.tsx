@@ -49,7 +49,7 @@ export default function Navbar() {
           {/* Right Actions */}
           <div className="flex items-center gap-3">
             <a 
-              href="https://github.com"
+              href="https://github.com/kaustubh1211/apilens"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg"

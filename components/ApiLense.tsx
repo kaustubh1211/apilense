@@ -21,8 +21,7 @@ export default function ApiLensApp() {
   const [activeTab, setActiveTab] = useState<'tree' | 'table' | 'raw' | 'graph'>('tree');
   const [searchQuery, setSearchQuery] = useState('');
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const [responseKey, setResponseKey] = useState(0); // Add this for forcing re-render
-
+  const [responseKey, setResponseKey] = useState(0);
   const handleResponse = (response: any) => {
     setResponseData(response);
     setSearchQuery('');
@@ -101,15 +100,6 @@ export default function ApiLensApp() {
                   data={responseData.data}
                   onFullscreenToggle={setIsFullscreen}
                 />
-
-                {isFullscreen && (
-                  <button
-                    onClick={() => setIsFullscreen(false)}
-                    className="p-2 hover:bg-neutral-900 rounded-lg transition-colors"
-                  >
-                    <X className="w-5 h-5 text-neutral-400" />
-                  </button>
-                )}
               </div>
 
               {/* Tabs */}

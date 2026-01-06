@@ -17,7 +17,29 @@ export default function ApiForm({ onResponse, onError }: ApiFormProps) {
   const [loading, setLoading] = useState(false);
   const [showHeaders, setShowHeaders] = useState(false);
   const [headers, setHeaders] = useState<Array<{ key: string; value: string }>>([]);
-  const [customJson, setCustomJson] = useState('{\n  "name": "John Doe",\n  "age": 30,\n  "email": "john@example.com"\n}');
+  const [customJson, setCustomJson] = useState(`{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "profile": {
+        "age": 30,
+        "city": "New York"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "profile": {
+        "age": 25,
+        "city": "Los Angeles"
+      }
+    }
+  ],
+  "total": 2
+}`);
   const [jsonError, setJsonError] = useState('');
   const [hasInitialLoad, setHasInitialLoad] = useState(false);
 

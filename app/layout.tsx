@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import GoogleAnalytics from '@/components/GoggleAnalyatics';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -84,7 +85,9 @@ export default function RootLayout({
       <head>
         <link rel="canonical" href="https://apilens.kaustubhp.in" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>{children}
+        <GoogleAnalytics measurementId="G-ZJFV4GWWGG"/>
+      </body>
     </html>
   );
 }

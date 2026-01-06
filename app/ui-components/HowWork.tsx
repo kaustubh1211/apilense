@@ -1,6 +1,7 @@
 'use client';
 
 import { Send, Sparkles, Eye, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export default function HowItWorks() {
   return (
@@ -47,13 +48,13 @@ export default function HowItWorks() {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <a
+          <Link
             href="/app"
             className="inline-flex items-center gap-2 px-8 py-4  bg-gradient-to-b from-blue-500 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-blue-800"
           >
             Try it now — it's free
             <ArrowRight className="w-5 h-5" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
