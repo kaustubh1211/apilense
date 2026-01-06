@@ -29,7 +29,7 @@ export default function Hero() {
           <div className="flex items-center justify-center mb-20">
             <Link
               href="/app"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-b from-blue-500 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-blue-800 shadow-lg"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-b from-slate-900 to-slate-700 text-white font-semibold rounded-lg hover:from-slate-800 hover:to-slate-700 shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Start Testing APIs
               <ArrowRight className="w-5 h-5" />

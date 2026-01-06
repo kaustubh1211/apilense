@@ -60,7 +60,7 @@ export default function Navbar() {
          
             <Link 
               href="/app"
-              className="px-5 py-2  bg-gradient-to-b from-blue-500 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-blue-800 bg-indigo-"
+              className="px-5 py-2  bg-gradient-to-b from-slate-900 to-slate-700 text-white font-semibold rounded-lg hover:from-slate-800 hover:to-slate-700 shadow-lg hover:shadow-xl transition-all duration-300"
             >
            Lanuch App
             </Link>

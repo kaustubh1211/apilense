@@ -10,7 +10,12 @@ export default function HowItWorks() {
         {/* Section Header */}
         <div className="text-center mb-20">
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-            Three steps to visual clarity
+            Three steps to 
+            <span className='bg-gradient-to-b from-blue-500 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-blue-800 ml-5 mr-3'>
+
+            visual 
+            </span>
+            clarity
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             From API request to beautiful visualization in seconds
